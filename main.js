@@ -3,21 +3,21 @@ const typeCheck = require('type-check').typeCheck
 
 // Definition of the input
 const INPUT_TYPE = `{
-    crawledAt: String,
-    name: String,
+    crawledAt: String
+    name: String
     input: {
-        dictionary: String,
+        translation: String
         source: String
         query: String
-    },
+    }
     definitions: [
         {
-            meaning: String,
-            grammar: String,
+            meaning: String
+            grammar: String
             examples: [
                 {
-                    level: Maybe String,
-                    mono: Maybe String,
+                    level: Maybe String
+                    mono: Maybe String
                     tran: Maybe String
                 }
             ]
@@ -49,7 +49,7 @@ Apify.main(async () => {
             // header_date: '',
             // images: '',
             // videos: ''
-            row00: input.query,
+            row00: input.input.query,
             row01: '',
             row02: '',
             row03: '',
@@ -69,14 +69,14 @@ Apify.main(async () => {
             row17: '',
             row18: '',
             row19: '',
-            // audio00: '',
-            // audio01: '',
-            // audio02: '',
-            // audio03: '',
-            // audio04: '',
-            // audio05: '',
-            // audio06: '',
-            lang: input.source,
+            audio00: '',  // NOTE: calculate a filename.mp3
+            audio01: '',
+            audio02: '',
+            audio03: '',
+            audio04: '',
+            audio05: '',
+            audio06: '',
+            lang: input.input.source,
         }
     }
 

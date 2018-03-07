@@ -1,8 +1,8 @@
 {
-  "crawledAt": "2018-03-05T03:18:32.970Z",
+  "crawledAt": "2018-03-07T17:27:06.895Z",
   "name": "apify/igsys/linguee",
   "input": {
-    "dictionary": "english-french",
+    "translation": "english",
     "source": "french",
     "query": "passer"
   },
