@@ -2,7 +2,7 @@ const Apify = require('apify')
 const typeCheck = require('type-check').typeCheck
 
 // Definition of the input
-const INPUT_TYPE = `{
+const PHRASE_TYPE = `{
     crawledAt: String
     name: String
     input: {
@@ -23,6 +23,12 @@ const INPUT_TYPE = `{
             ]
         }
     ]
+}`
+
+const INPUT_TYPE = `{
+    id: String
+    linguee: ${PHRASE_TYPE}
+    tatoeba: ${PHRASE_TYPE}
 }`
 
 Apify.main(async () => {
