@@ -28,7 +28,7 @@ const PHRASE_TYPE = `{
 const INPUT_TYPE = `{
     id: String
     linguee: ${PHRASE_TYPE}
-    tatoeba: Maybe ${PHRASE_TYPE}
+    tatoeba: ${PHRASE_TYPE}
 }`
 
 Apify.main(async () => {
