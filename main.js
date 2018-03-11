@@ -1,5 +1,6 @@
 const Apify = require('apify')
 const typeCheck = require('type-check').typeCheck
+const Base64 = require('js-base64').Base64
 
 // Definition of the input
 const PHRASE_TYPE = `{
@@ -42,6 +43,7 @@ const getNounGender = noun => {
 
 }
 
+// NOTE: pick out definitions from cambridge dictionary.  First entry when grammar and form changed.
 const pickDefinition = (cambridgeDefs) => {
     let picked = []
     let grammar_tmp = ''
@@ -57,6 +59,7 @@ const pickDefinition = (cambridgeDefs) => {
     return picked
 }
 
+// NOTE: matches meaning from linguee Definitions array, and extract intermediate examples
 const getIntermediateExample = (meaning, lingueeDefs) => {
     const meaning_replaced = meaning.replace('to ', '').trim()
     let example = {
@@ -78,29 +81,44 @@ const getIntermediateExample = (meaning, lingueeDefs) => {
     return example
 }
 
+const encodeFilename = (str) => {
+    if (str) {
+        const result = Base64.encode(str)
+        console.log(result)
+        return result.replace('=', '').slice(0, 19)
+    }
+    return ''
+}
+
 const flattenExamples = (cambridgePicked, lingueeDefs) => {
     let flattened = []
     cambridgePicked.forEach((item, i) => {
         const example_intermd = getIntermediateExample(item.meaning, lingueeDefs)
-        console.log(item.examples)
+        // console.log(item.examples)
+        // NOTE: use cambridge second example if intermediate example does not exist
+        const example_novoice_mono = item.examples[0].mono
+        const example_novoice_tran = item.examples[0].tran
+        const example_intermd_mono = example_intermd.mono ?
+            example_intermd.mono :
+            item.examples[1] ? item.examples[1].mono : ''
+        const example_intermd_tran = example_intermd.mono ?
+            example_intermd.tran :
+            item.examples[1] ? item.examples[1].tran : ''
+
         flattened.push({
             grammar: item.grammar,
             form: item.form,
             meaning: item.meaning,
             meaning_mono: item.meaning_mono,
             gender: item.examples[0].gender,
-            example_novoice_mono: item.examples[0].mono,
-            example_novoice_mono_fn: '',
-            example_novoice_tran: item.examples[0].tran,
-            example_novoice_tran_fn: '',
-            example_intermd_mono: example_intermd.mono ?
-                example_intermd.mono :
-                item.examples[1] ? item.examples[1].mono : '',
-            example_intermd_mono_fn: '',
-            example_intermd_tran: example_intermd.mono ?
-                example_intermd.tran :
-                item.examples[1] ? item.examples[1].tran : '',
-            example_intermd_tran_fn: '',
+            example_novoice_mono,
+            example_novoice_mono_fn: encodeFilename(example_novoice_mono),
+            example_novoice_tran,
+            example_novoice_tran_fn: encodeFilename(example_novoice_tran),
+            example_intermd_mono,
+            example_intermd_mono_fn: encodeFilename(example_intermd_mono),
+            example_intermd_tran,
+            example_intermd_tran_fn: encodeFilename(example_intermd_tran),
         })
     })
     console.log('flattened', flattened)

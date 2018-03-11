@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "apify": "^0.4.32",
+    "js-base64": "^2.4.3",
     "type-check": "^0.3.2"
   },
   "devDependencies": {
