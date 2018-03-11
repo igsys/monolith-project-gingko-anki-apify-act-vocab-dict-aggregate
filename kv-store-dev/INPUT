@@ -1,131 +1,127 @@
 {
-  "crawledAt": "2018-03-07T17:27:06.895Z",
+  "id": "75cfc34816265ac15c000078",
+  "linguee":{
+  "crawledAt": "2018-03-11T23:32:28.728Z",
   "name": "apify/igsys/linguee",
   "input": {
     "translation": "english",
     "source": "french",
-    "query": "passer"
+    "query": "maison"
   },
   "definitions": [
     {
-      "meaning": "go",
-      "grammar": "v",
-      "examples": []
-    },
-    {
-      "meaning": "pass (sth.)",
-      "grammar": "v",
+      "meaning": "home",
+      "grammar": "n",
       "examples": [
         {
           "level": "INTERMEDIATE",
-          "mono": "Il a demandé à sa sœur de lui passer le sel.",
-          "tran": "He asked his sister to pass him the salt."
+          "mono": "Mon chat n'erre jamais loin de la maison.",
+          "tran": "My cat never strays far from home."
         }
       ]
     },
     {
-      "meaning": "spend sth.",
-      "grammar": "v",
+      "meaning": "house",
+      "grammar": "n",
       "examples": [
         {
           "level": "INTERMEDIATE",
-          "mono": "Je passe beaucoup de temps à l'extérieur.",
-          "tran": "I spend a lot of time outdoors."
+          "mono": "La famille vit dans une belle maison en banlieue.",
+          "tran": "The family lives in a nice house in the suburbs."
         }
       ]
-    },
-    {
-      "meaning": "place",
-      "grammar": "v",
-      "examples": [
-        {
-          "level": "INTERMEDIATE",
-          "mono": "L'entreprise a passé une commande pour de nouvelles chaises.",
-          "tran": "The company placed a purchase order for new chairs."
-        }
-      ]
-    },
-    {
-      "meaning": "run",
-      "grammar": "v",
-      "examples": [
-        {
-          "level": "INTERMEDIATE",
-          "mono": "Le fleuve passe au milieu du plateau.",
-          "tran": "The river runs in the middle of the plateau."
-        }
-      ]
-    },
-    {
-      "meaning": "play",
-      "grammar": "v",
-      "examples": [
-        {
-          "level": "INTERMEDIATE",
-          "mono": "Cette station de radio passe tous les derniers tubes.",
-          "tran": "This radio station plays all the latest hits."
-        }
-      ]
-    },
-    {
-      "meaning": "pass sth. on",
-      "grammar": "v",
-      "examples": [
-        {
-          "level": "INTERMEDIATE",
-          "mono": "L'élève a passé un mot à son camarade de classe.",
-          "tran": "The pupil passed on a note to his classmate."
-        }
-      ]
-    },
-    {
-      "meaning": "show",
-      "grammar": "v",
-      "examples": [
-        {
-          "level": "INTERMEDIATE",
-          "mono": "Cette chaîne de télévision passe de vieux films tous les lundis.",
-          "tran": "This television channel shows old movies every Monday."
-        }
-      ]
-    },
-    {
-      "meaning": "fade",
-      "grammar": "v",
-      "examples": [
-        {
-          "level": "INTERMEDIATE",
-          "mono": "Le motif sur les rideaux est passé à cause du soleil.",
-          "tran": "The pattern on the curtains has faded due to the sunlight."
-        }
-      ]
-    },
-    {
-      "meaning": "hand over",
-      "grammar": "v",
-      "examples": [
-        {
-          "level": "INTERMEDIATE",
-          "mono": "Le fondateur de l'entreprise a passé la direction à sa fille.",
-          "tran": "The founder of the company handed the management over to his daughter."
-        }
-      ]
-    },
-    {
-      "meaning": "elapse",
-      "grammar": "v",
-      "examples": [
-        {
-          "level": "INTERMEDIATE",
-          "mono": "Deux semaines ont passé avant qu'elle ne reçoive une réponse à sa lettre.",
-          "tran": "Two weeks elapsed before she received a reply to her letter."
-        }
-      ]
-    },
-    {
-      "meaning": "passeur",
-      "grammar": "m",
-      "examples": []
     }
   ]
+},
+"cambridge": {
+  "crawledAt": "2018-03-11T23:33:33.285Z",
+  "name": "apify/igsys/linguee",
+  "input": {
+    "translation": "english",
+    "source": "french",
+    "query": "maison"
+  },
+  "meta": {
+    "ipa": "mɛzɔ̃",
+    "def_simple": "house"
+  },
+  "definitions": [
+    {
+      "grammar": "noun",
+      "form": "",
+      "meaning": "house",
+      "meaning_mono": "bâtiment où l’on habite",
+      "examples": [
+        {
+          "gender": "f",
+          "level": "NOVOICE",
+          "mono": "Ils ont vendu leur maison.",
+          "tran": "They sold their house."
+        }
+      ]
+    },
+    {
+      "grammar": "noun",
+      "form": "",
+      "meaning": "home",
+      "meaning_mono": "lieu d’habitation, domicile",
+      "examples": [
+        {
+          "gender": "f",
+          "level": "NOVOICE",
+          "mono": "être à la maison",
+          "tran": "to be home"
+        },
+        {
+          "gender": "f",
+          "level": "NOVOICE",
+          "mono": "rentrer à la maison",
+          "tran": "to go home"
+        }
+      ]
+    },
+    {
+      "grammar": "noun",
+      "form": "",
+      "meaning": "company",
+      "meaning_mono": "entreprise",
+      "examples": [
+        {
+          "gender": "f",
+          "level": "NOVOICE",
+          "mono": "une maison d’édition",
+          "tran": "a publishing house"
+        }
+      ]
+    },
+    {
+      "grammar": "noun",
+      "form": "",
+      "meaning": "retirement home",
+      "meaning_mono": "lieu qui accueille les personnes âgées",
+      "examples": []
+    },
+    {
+      "grammar": "noun",
+      "form": "",
+      "meaning": "prison",
+      "meaning_mono": "prison",
+      "examples": []
+    },
+    {
+      "grammar": "adjective",
+      "form": "invariable",
+      "meaning": "homemade",
+      "meaning_mono": "fait à la maison",
+      "examples": [
+        {
+          "gender": "unknown",
+          "level": "NOVOICE",
+          "mono": "un gâteau maison",
+          "tran": "a homemade cake"
+        }
+      ]
+    }
+  ]
+}
 }

@@ -10,15 +10,22 @@ const PHRASE_TYPE = `{
         source: String
         query: String
     }
+    meta: Maybe {
+        ipa: Maybe String
+        def_simple: Maybe String
+    }
     definitions: [
         {
             meaning: String
+            meaning_mono: Maybe String
             grammar: String
+            form: Maybe String
             examples: [
                 {
-                    level: Maybe String
-                    mono: Maybe String
-                    tran: Maybe String
+                    gender: Maybe String
+                    level: String
+                    mono: String
+                    tran: String
                 }
             ]
         }
@@ -28,8 +35,87 @@ const PHRASE_TYPE = `{
 const INPUT_TYPE = `{
     id: String
     linguee: ${PHRASE_TYPE}
-    forvo: ${PHRASE_TYPE}
+    cambridge: ${PHRASE_TYPE}
 }`
+
+const getNounGender = noun => {
+
+}
+
+const pickDefinition = (cambridgeDefs) => {
+    let picked = []
+    let grammar_tmp = ''
+    let form_tmp = ''
+    cambridgeDefs.forEach((item, i) => {
+        if (item.grammar !== grammar_tmp || item.form !== form_tmp) {
+            picked.push(item)
+            grammar_tmp = item.grammar
+            form_tmp = item.form
+        }
+    })
+    // console.log(picked)
+    return picked
+}
+
+const getIntermediateExample = (meaning, lingueeDefs) => {
+    const meaning_replaced = meaning.replace('to ', '').trim()
+    let example = {
+        mono: '',
+        tran: ''
+    }
+    lingueeDefs.forEach(item => {
+        // console.log(item.meaning.includes(meaning_replaced))
+        if (item.meaning.includes(meaning_replaced)) {
+            if (item.examples[0]) {
+                console.log(item.examples[0].mono)
+                example = {
+                    mono: item.examples[0].mono || '',
+                    tran: item.examples[0].tran || ''
+                }
+            }
+        }
+    })
+    return example
+}
+
+const flattenExamples = (cambridgePicked, lingueeDefs) => {
+    let flattened = []
+    cambridgePicked.forEach((item, i) => {
+        const example_intermd = getIntermediateExample(item.meaning, lingueeDefs)
+        console.log(item.examples)
+        flattened.push({
+            grammar: item.grammar,
+            form: item.form,
+            meaning: item.meaning,
+            meaning_mono: item.meaning_mono,
+            gender: item.examples[0].gender,
+            example_novoice_mono: item.examples[0].mono,
+            example_novoice_mono_fn: '',
+            example_novoice_tran: item.examples[0].tran,
+            example_novoice_tran_fn: '',
+            example_intermd_mono: example_intermd.mono ?
+                example_intermd.mono :
+                item.examples[1] ? item.examples[1].mono : '',
+            example_intermd_mono_fn: '',
+            example_intermd_tran: example_intermd.mono ?
+                example_intermd.tran :
+                item.examples[1] ? item.examples[1].tran : '',
+            example_intermd_tran_fn: '',
+        })
+    })
+    console.log('flattened', flattened)
+    return flattened
+}
+
+const getCambridgeDictLink = (source, translation, query) => {
+    const uri = `https://dictionary.cambridge.org/dictionary/${source}-${translation}/${query}`
+    return `<a href='${uri}'>Cambridge</a>`
+}
+
+const getLingueeDictLink = (source, translation, query) => {
+    const uri = `https://www.linguee.com/${translation}-${source}/search?source=${source}&query=${query}`
+    return `<a href='${uri}'>Linguee</a>`
+}
 
 Apify.main(async () => {
     // Fetch the input and check it has a valid format
@@ -44,7 +130,18 @@ Apify.main(async () => {
     }
 
     // Here's the place for your magic...
-    console.log(`Input name: ${input.name}`)
+    console.log(`Input name: ${input.linguee.name}`)
+    console.log(`Input id: ${input.id}`)
+
+    // Pick Definition
+    const picked = pickDefinition(input.cambridge.definitions)
+    const flattened = flattenExamples(picked, input.linguee.definitions)
+
+    // Output a single word definition with simple examples: Basic::Vocab
+
+
+    // Output to each example phrases: Cloze::Phrase
+
 
     // Store the output
     const output = {
@@ -55,7 +152,7 @@ Apify.main(async () => {
             // header_date: '',
             // images: '',
             // videos: ''
-            row00: input.input.query,
+            row00: input.cambridge.input.query || input.linguee.input.query,
             row01: '',
             row02: '',
             row03: '',
@@ -82,7 +179,7 @@ Apify.main(async () => {
             audio04: '',
             audio05: '',
             audio06: '',
-            lang: input.input.source,
+            lang: input.linguee.input.source,
         }
     }
 
