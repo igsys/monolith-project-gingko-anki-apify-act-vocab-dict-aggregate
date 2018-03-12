@@ -101,7 +101,7 @@ const getIntermediateExample = (meaning, lingueeDefs) => {
         // console.log(item.meaning.includes(meaning_replaced))
         if (item.meaning.includes(meaning_replaced)) {
             if (item.examples[0]) {
-                console.log(item.examples[0].mono)
+                console.log(item.examples[0])
                 example = {
                     mono: item.examples[0].mono || '',
                     tran: item.examples[0].tran || '',
@@ -123,7 +123,8 @@ const encodeFilename = (str, id, gender = '', extension = 'mp3') => {
 }
 
 const upperCaseFirstLetter = (str) => {
-    return str.charAt(0).toUpperCase() + str.toLowerCase().slice(1)
+    if (str) return str.charAt(0).toUpperCase() + str.toLowerCase().slice(1)
+    return ''
 }
 
 const flattenExamples = (cambridgePicked, lingueeDefs, id, input) => {
@@ -141,6 +142,9 @@ const flattenExamples = (cambridgePicked, lingueeDefs, id, input) => {
         const example_intermd_tran = example_intermd.mono ?
             example_intermd.tran :
             item.examples[1] ? item.examples[1].tran : ''
+        const example_intermd_level = example_intermd.level ?
+            example_intermd.level :
+            item.examples[1] ? item.examples[1].level : ''
 
         let entry = {}
         entry = {
@@ -161,7 +165,7 @@ const flattenExamples = (cambridgePicked, lingueeDefs, id, input) => {
             meaning: item.meaning,
             meaning_mono: item.meaning_mono,
             gender: item.examples[0].gender,
-            level: example_intermd.level,
+            level: example_intermd_level,
             example_mono: example_intermd_mono,
             example_tran: example_intermd_tran,
         }
@@ -274,6 +278,7 @@ Apify.main(async () => {
     // Output a single word definition with simple examples: Basic::Vocab
     const vocabs = []
     flattened.forEach((item, i) => {
+        console.log(item)
         const query = input.cambridge.input.query || input.linguee.input.query
         const source = input.cambridge.input.source || input.linguee.input.source
         const translation = input.cambridge.input.translation || input.linguee.input.translation

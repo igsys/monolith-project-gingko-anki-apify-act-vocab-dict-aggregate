@@ -1,127 +1,355 @@
-{
-  "id": "75cfc34816265ac15c000078",
-  "linguee":{
-  "crawledAt": "2018-03-11T23:32:28.728Z",
+{"id": "75cfc34816265ac15c000077", "linguee": {
+  "crawledAt": "2018-03-12T09:32:53.021Z",
   "name": "apify/igsys/linguee",
   "input": {
     "translation": "english",
     "source": "french",
-    "query": "maison"
+    "query": "passer"
   },
   "definitions": [
     {
-      "meaning": "home",
-      "grammar": "n",
+      "meaning": "go",
+      "grammar": "v",
+      "examples": []
+    },
+    {
+      "meaning": "pass (sth.)",
+      "grammar": "v",
       "examples": [
         {
           "level": "INTERMEDIATE",
-          "mono": "Mon chat n'erre jamais loin de la maison.",
-          "tran": "My cat never strays far from home."
+          "mono": "Il a demandé à sa sœur de lui passer le sel.",
+          "tran": "He asked his sister to pass him the salt."
         }
       ]
     },
     {
-      "meaning": "house",
-      "grammar": "n",
+      "meaning": "spend sth.",
+      "grammar": "v",
       "examples": [
         {
           "level": "INTERMEDIATE",
-          "mono": "La famille vit dans une belle maison en banlieue.",
-          "tran": "The family lives in a nice house in the suburbs."
+          "mono": "Nous avons passé une délicieuse soirée ensemble.",
+          "tran": "We spent a lovely evening together."
         }
       ]
+    },
+    {
+      "meaning": "place",
+      "grammar": "v",
+      "examples": [
+        {
+          "level": "INTERMEDIATE",
+          "mono": "L'entreprise a passé une commande pour de nouvelles chaises.",
+          "tran": "The company placed a purchase order for new chairs."
+        }
+      ]
+    },
+    {
+      "meaning": "run",
+      "grammar": "v",
+      "examples": [
+        {
+          "level": "INTERMEDIATE",
+          "mono": "Le fleuve passe au milieu du plateau.",
+          "tran": "The river runs in the middle of the plateau."
+        }
+      ]
+    },
+    {
+      "meaning": "play",
+      "grammar": "v",
+      "examples": [
+        {
+          "level": "INTERMEDIATE",
+          "mono": "Cette station de radio passe tous les derniers tubes.",
+          "tran": "This radio station plays all the latest hits."
+        }
+      ]
+    },
+    {
+      "meaning": "pass sth. on",
+      "grammar": "v",
+      "examples": [
+        {
+          "level": "INTERMEDIATE",
+          "mono": "L'élève a passé un mot à son camarade de classe.",
+          "tran": "The pupil passed on a note to his classmate."
+        }
+      ]
+    },
+    {
+      "meaning": "show",
+      "grammar": "v",
+      "examples": [
+        {
+          "level": "INTERMEDIATE",
+          "mono": "Cette chaîne de télévision passe de vieux films tous les lundis.",
+          "tran": "This television channel shows old movies every Monday."
+        }
+      ]
+    },
+    {
+      "meaning": "fade",
+      "grammar": "v",
+      "examples": [
+        {
+          "level": "INTERMEDIATE",
+          "mono": "Le motif sur les rideaux est passé à cause du soleil.",
+          "tran": "The pattern on the curtains has faded due to the sunlight."
+        }
+      ]
+    },
+    {
+      "meaning": "hand over",
+      "grammar": "v",
+      "examples": [
+        {
+          "level": "INTERMEDIATE",
+          "mono": "Le fondateur de l'entreprise a passé la direction à sa fille.",
+          "tran": "The founder of the company handed the management over to his daughter."
+        }
+      ]
+    },
+    {
+      "meaning": "elapse",
+      "grammar": "v",
+      "examples": [
+        {
+          "level": "INTERMEDIATE",
+          "mono": "Deux semaines ont passé avant qu'elle ne reçoive une réponse à sa lettre.",
+          "tran": "Two weeks elapsed before she received a reply to her letter."
+        }
+      ]
+    },
+    {
+      "meaning": "passeur",
+      "grammar": "m",
+      "examples": []
     }
   ]
-},
-"cambridge": {
-  "crawledAt": "2018-03-11T23:33:33.285Z",
+}, "cambridge": {
+  "crawledAt": "2018-03-12T09:33:11.401Z",
   "name": "apify/igsys/linguee",
   "input": {
     "translation": "english",
     "source": "french",
-    "query": "maison"
+    "query": "passer"
   },
   "meta": {
-    "ipa": "mɛzɔ̃",
-    "def_simple": "house"
+    "ipa": "pɑse",
+    "def_simple": "to go"
   },
   "definitions": [
     {
-      "grammar": "noun",
-      "form": "",
-      "meaning": "house",
-      "meaning_mono": "bâtiment où l’on habite",
-      "examples": [
-        {
-          "gender": "f",
-          "level": "NOVOICE",
-          "mono": "Ils ont vendu leur maison.",
-          "tran": "They sold their house."
-        }
-      ]
-    },
-    {
-      "grammar": "noun",
-      "form": "",
-      "meaning": "home",
-      "meaning_mono": "lieu d’habitation, domicile",
-      "examples": [
-        {
-          "gender": "f",
-          "level": "NOVOICE",
-          "mono": "être à la maison",
-          "tran": "to be home"
-        },
-        {
-          "gender": "f",
-          "level": "NOVOICE",
-          "mono": "rentrer à la maison",
-          "tran": "to go home"
-        }
-      ]
-    },
-    {
-      "grammar": "noun",
-      "form": "",
-      "meaning": "company",
-      "meaning_mono": "entreprise",
-      "examples": [
-        {
-          "gender": "f",
-          "level": "NOVOICE",
-          "mono": "une maison d’édition",
-          "tran": "a publishing house"
-        }
-      ]
-    },
-    {
-      "grammar": "noun",
-      "form": "",
-      "meaning": "retirement home",
-      "meaning_mono": "lieu qui accueille les personnes âgées",
-      "examples": []
-    },
-    {
-      "grammar": "noun",
-      "form": "",
-      "meaning": "prison",
-      "meaning_mono": "prison",
-      "examples": []
-    },
-    {
-      "grammar": "adjective",
-      "form": "invariable",
-      "meaning": "homemade",
-      "meaning_mono": "fait à la maison",
+      "grammar": "verb",
+      "form": "intransitive",
+      "meaning": "to go",
+      "meaning_mono": "aller d’un lieu à un autre, se déplacer",
       "examples": [
         {
           "gender": "unknown",
           "level": "NOVOICE",
-          "mono": "un gâteau maison",
-          "tran": "a homemade cake"
+          "mono": "passer dans la rue",
+          "tran": "to go along the street"
+        },
+        {
+          "gender": "unknown",
+          "level": "NOVOICE",
+          "mono": "Je suis passé devant chez toi.",
+          "tran": "I passed your place."
+        },
+        {
+          "gender": "unknown",
+          "level": "NOVOICE",
+          "mono": "laisser passer qqn",
+          "tran": "to let sb pass"
+        },
+        {
+          "gender": "unknown",
+          "level": "NOVOICE",
+          "mono": "passer d’une pièce à une autre",
+          "tran": "to go from one room to another"
+        }
+      ]
+    },
+    {
+      "grammar": "verb",
+      "form": "intransitive",
+      "meaning": "to go",
+      "meaning_mono": "traverser",
+      "examples": [
+        {
+          "gender": "unknown",
+          "level": "NOVOICE",
+          "mono": "passer par Paris",
+          "tran": "to go via Paris"
+        }
+      ]
+    },
+    {
+      "grammar": "verb",
+      "form": "intransitive",
+      "meaning": "to disappear",
+      "meaning_mono": "disparaître, s’effacer",
+      "examples": [
+        {
+          "gender": "unknown",
+          "level": "NOVOICE",
+          "mono": "La douleur est passée.",
+          "tran": "The pain has gone."
+        }
+      ]
+    },
+    {
+      "grammar": "verb",
+      "form": "intransitive",
+      "meaning": "to pass",
+      "meaning_mono": "s’écouler",
+      "examples": [
+        {
+          "gender": "unknown",
+          "level": "NOVOICE",
+          "mono": "Le temps passe vite.",
+          "tran": "Time goes by very fast."
+        }
+      ]
+    },
+    {
+      "grammar": "verb",
+      "form": "intransitive",
+      "meaning": "to be on",
+      "meaning_mono": "être présenté, projeté",
+      "examples": [
+        {
+          "gender": "unknown",
+          "level": "NOVOICE",
+          "mono": "Ce film passe au cinéma.",
+          "tran": "The movie is on at the moment."
+        },
+        {
+          "gender": "unknown",
+          "level": "NOVOICE",
+          "mono": "passer à la radio",
+          "tran": "to be on the radio"
+        }
+      ]
+    },
+    {
+      "grammar": "verb",
+      "form": "intransitive",
+      "meaning": "to be admitted",
+      "meaning_mono": "être admis",
+      "examples": [
+        {
+          "gender": "unknown",
+          "level": "NOVOICE",
+          "mono": "passer en seconde",
+          "tran": "to go up into tenth grade"
+        }
+      ]
+    },
+    {
+      "grammar": "verb",
+      "form": "intransitive",
+      "meaning": "to be considered",
+      "meaning_mono": "être considéré comme",
+      "examples": [
+        {
+          "gender": "unknown",
+          "level": "NOVOICE",
+          "mono": "passer pour mort",
+          "tran": "to be thought to be dead"
+        }
+      ]
+    },
+    {
+      "grammar": "verb",
+      "form": "transitive",
+      "meaning": "to spend",
+      "meaning_mono": "utiliser, employer",
+      "examples": [
+        {
+          "gender": "unknown",
+          "level": "NOVOICE",
+          "mono": "passer du temps à faire qqch",
+          "tran": "to spend time doing sth"
+        },
+        {
+          "gender": "unknown",
+          "level": "NOVOICE",
+          "mono": "passer une mauvaise journée",
+          "tran": "to have a bad day"
+        },
+        {
+          "gender": "unknown",
+          "level": "NOVOICE",
+          "mono": "passer ses vacances à la campagne",
+          "tran": "to spend one’s vacation in the countryside"
+        }
+      ]
+    },
+    {
+      "grammar": "verb",
+      "form": "transitive",
+      "meaning": "to put on",
+      "meaning_mono": "mettre sur soi",
+      "examples": [
+        {
+          "gender": "unknown",
+          "level": "NOVOICE",
+          "mono": "passer une robe",
+          "tran": "to put on a dress"
+        }
+      ]
+    },
+    {
+      "grammar": "verb",
+      "form": "transitive",
+      "meaning": "to pass",
+      "meaning_mono": "donner",
+      "examples": [
+        {
+          "gender": "unknown",
+          "level": "NOVOICE",
+          "mono": "passer qqch à qqn",
+          "tran": "to pass sth to sb"
+        }
+      ]
+    },
+    {
+      "grammar": "verb",
+      "form": "transitive",
+      "meaning": "to take",
+      "meaning_mono": "subir",
+      "examples": [
+        {
+          "gender": "unknown",
+          "level": "NOVOICE",
+          "mono": "passer un examen",
+          "tran": "to take an exam"
+        }
+      ]
+    },
+    {
+      "grammar": "verb",
+      "form": "transitive",
+      "meaning": "to cross",
+      "meaning_mono": "aller au-delà, traverser",
+      "examples": [
+        {
+          "gender": "unknown",
+          "level": "NOVOICE",
+          "mono": "passer le pont",
+          "tran": "to cross the bridge"
+        },
+        {
+          "gender": "unknown",
+          "level": "NOVOICE",
+          "mono": "passer la frontière",
+          "tran": "to cross the border"
         }
       ]
     }
   ]
-}
-}
+}}

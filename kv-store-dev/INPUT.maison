@@ -1,0 +1,127 @@
+{
+  "id": "75cfc34816265ac15c000078",
+  "linguee":{
+  "crawledAt": "2018-03-11T23:32:28.728Z",
+  "name": "apify/igsys/linguee",
+  "input": {
+    "translation": "english",
+    "source": "french",
+    "query": "maison"
+  },
+  "definitions": [
+    {
+      "meaning": "home",
+      "grammar": "n",
+      "examples": [
+        {
+          "level": "INTERMEDIATE",
+          "mono": "Mon chat n'erre jamais loin de la maison.",
+          "tran": "My cat never strays far from home."
+        }
+      ]
+    },
+    {
+      "meaning": "house",
+      "grammar": "n",
+      "examples": [
+        {
+          "level": "INTERMEDIATE",
+          "mono": "La famille vit dans une belle maison en banlieue.",
+          "tran": "The family lives in a nice house in the suburbs."
+        }
+      ]
+    }
+  ]
+},
+"cambridge": {
+  "crawledAt": "2018-03-11T23:33:33.285Z",
+  "name": "apify/igsys/linguee",
+  "input": {
+    "translation": "english",
+    "source": "french",
+    "query": "maison"
+  },
+  "meta": {
+    "ipa": "mɛzɔ̃",
+    "def_simple": "house"
+  },
+  "definitions": [
+    {
+      "grammar": "noun",
+      "form": "",
+      "meaning": "house",
+      "meaning_mono": "bâtiment où l’on habite",
+      "examples": [
+        {
+          "gender": "f",
+          "level": "NOVOICE",
+          "mono": "Ils ont vendu leur maison.",
+          "tran": "They sold their house."
+        }
+      ]
+    },
+    {
+      "grammar": "noun",
+      "form": "",
+      "meaning": "home",
+      "meaning_mono": "lieu d’habitation, domicile",
+      "examples": [
+        {
+          "gender": "f",
+          "level": "NOVOICE",
+          "mono": "être à la maison",
+          "tran": "to be home"
+        },
+        {
+          "gender": "f",
+          "level": "NOVOICE",
+          "mono": "rentrer à la maison",
+          "tran": "to go home"
+        }
+      ]
+    },
+    {
+      "grammar": "noun",
+      "form": "",
+      "meaning": "company",
+      "meaning_mono": "entreprise",
+      "examples": [
+        {
+          "gender": "f",
+          "level": "NOVOICE",
+          "mono": "une maison d’édition",
+          "tran": "a publishing house"
+        }
+      ]
+    },
+    {
+      "grammar": "noun",
+      "form": "",
+      "meaning": "retirement home",
+      "meaning_mono": "lieu qui accueille les personnes âgées",
+      "examples": []
+    },
+    {
+      "grammar": "noun",
+      "form": "",
+      "meaning": "prison",
+      "meaning_mono": "prison",
+      "examples": []
+    },
+    {
+      "grammar": "adjective",
+      "form": "invariable",
+      "meaning": "homemade",
+      "meaning_mono": "fait à la maison",
+      "examples": [
+        {
+          "gender": "unknown",
+          "level": "NOVOICE",
+          "mono": "un gâteau maison",
+          "tran": "a homemade cake"
+        }
+      ]
+    }
+  ]
+}
+}
