@@ -296,8 +296,8 @@ Apify.main(async () => {
     const picked = pickDefinition(input.cambridge.definitions)
     const { flattened, tts } = flattenExamples(picked, input.linguee.definitions, input.id, input)
 
-    // Output a single word definition with simple examples: Basic::Vocab
-    const vocabs = []
+    // Output a single word definition with phrase examples: Cloze:Phrase
+    const phrases = []
     flattened.forEach((item, i) => {
         console.log(item)
         const query = input.cambridge.input.query || input.linguee.input.query
@@ -316,19 +316,20 @@ Apify.main(async () => {
             level
         } = item
 
-        vocabs.push({
+        phrases.push({
+            external_id: id,
             row00: query,
             row01: def_simple || '',
             row02: input.cambridge.meta.ipa || '',
             row03: example_mono,
             row04: example_tran,
-            row05: meaning,
-            row06: meaning_mono,
-            row07: grammar,
-            row08: gender,
-            row09: form,
-            row10: upperCaseFirstLetter(level),
-            row11: '',
+            row05: '',  // NOTE: example_mono_conjugation
+            row06: meaning,
+            row07: meaning_mono,
+            row08: grammar,
+            row09: gender,
+            row10: form,
+            row11: upperCaseFirstLetter(level),
             row12: '',
             row13: '',
             row14: '',
@@ -343,9 +344,9 @@ Apify.main(async () => {
             audio02: '',
             audio03: `[sound:${encodeFilename(example_mono, id, gender)}]`,
             audio04: `[sound:${encodeFilename(example_tran, id, gender)}]`,
-            audio05: `[sound:${encodeFilename(meaning, id, gender)}]`,
-            audio06: `[sound:${encodeFilename(meaning_mono, id, gender)}]`,
-            audio07: '',
+            audio05: '',
+            audio06: `[sound:${encodeFilename(meaning, id, gender)}]`,
+            audio07: `[sound:${encodeFilename(meaning_mono, id, gender)}]`,
             audio08: '',
             audio09: '',
             audio10: '',
@@ -363,55 +364,18 @@ Apify.main(async () => {
             flag_expert: level === LEVEL_TYPE.EXPERT ? 'y' : '',
             lang: source,
             tag: [
-                '#sdy.vocab', `#lng.${source}`, `#lvl.${level.toLowerCase()}`
+                '#sdy.phrase', `#lng.${source}`, `#lvl.${level.toLowerCase()}`
             ]
         })
     })
-
-    // Output to each example phrases: Cloze::Phrase
-    const phrases = []
-
 
     // Store the output
     const output = {
         createdAt: new Date(),
         name: 'apify/igsys/vocab-dict-aggregate',
         data: {
-            // 'external_id': '',
-            // header_date: '',
-            // images: '',
-            // videos: ''
-            vocabs,
             tts,
             phrases,
-            // row00: input.cambridge.input.query || input.linguee.input.query,
-            // row01: '',
-            // row02: '',
-            // row03: '',
-            // row04: '',
-            // row05: '',
-            // row06: '',
-            // row07: '',
-            // row08: '',
-            // row09: '',
-            // row10: '',
-            // row11: '',
-            // row12: '',
-            // row13: '',
-            // row14: '',
-            // row15: '',
-            // row16: '',
-            // row17: '',
-            // row18: '',
-            // row19: '',
-            // audio00: '',  // NOTE: calculate a filename.mp3
-            // audio01: '',
-            // audio02: '',
-            // audio03: '',
-            // audio04: '',
-            // audio05: '',
-            // audio06: '',
-            // lang: input.linguee.input.source,
         }
     }
 
