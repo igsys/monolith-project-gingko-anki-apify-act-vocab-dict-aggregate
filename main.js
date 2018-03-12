@@ -33,56 +33,58 @@ const PHRASE_TYPE = `{
     ]
 }`
 
+const GINGKO_TYPE = `{
+    action: String
+    audios: [String]
+    branch: String
+    content: String
+    deckname: String
+    header_date: String
+    id: String
+    images: [String]
+    lang: String
+    translation: String
+    modelname: String
+    speak: String
+    tags: [String]
+    videos: [String]
+    row00: String
+    row01: String
+    row02: String
+    row03: String
+    row04: String
+    row05: String
+    row06: String
+    row07: String
+    row08: String
+    row09: String
+    row10: String
+    row11: String
+    row12: String
+    row13: String
+    row14: String
+    row15: String
+    row16: String
+    row17: String
+    row18: String
+    row19: String
+    row20: String
+    row21: String
+    row22: String
+    row23: String
+    row24: String
+    row25: String
+    row26: String
+    row27: String
+    row28: String
+    row29: String
+}`
+
 const INPUT_TYPE = `{
     id: String
     linguee: ${PHRASE_TYPE}
     cambridge: ${PHRASE_TYPE}
-    gingko: {
-        action: String
-        audios: [String]
-        branch: String
-        content: String
-        deckname: String
-        header_date: String
-        id: String
-        images: [String]
-        lang: String
-        translation: String
-        modelname: String
-        speak: String
-        tags: [String]
-        videos: [String]
-        row00: String
-        row01: String
-        row02: String
-        row03: String
-        row04: String
-        row05: String
-        row06: String
-        row07: String
-        row08: String
-        row09: String
-        row10: String
-        row11: String
-        row12: String
-        row13: String
-        row14: String
-        row15: String
-        row16: String
-        row17: String
-        row18: String
-        row19: String
-        row20: String
-        row21: String
-        row22: String
-        row23: String
-        row24: String
-        row25: String
-        row26: String
-        row27: String
-        row28: String
-        row29: String
-    }
+    gingko: ${GINGKO_TYPE}
 }`
 
 const LEVEL_TYPE = {
