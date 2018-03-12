@@ -81,23 +81,23 @@ const getIntermediateExample = (meaning, lingueeDefs) => {
     return example
 }
 
-const encodeFilename = (str) => {
+const encodeFilename = (str, id, extension = 'mp3') => {
     if (str) {
         const result = Base64.encode(str)
-        console.log(result)
-        return result.replace('=', '').slice(0, 19)
+        // console.log(result)
+        return `${id}_${result.replace('=', '').slice(0, 19)}.${extension}`
     }
     return ''
 }
 
-const flattenExamples = (cambridgePicked, lingueeDefs) => {
+const flattenExamples = (cambridgePicked, lingueeDefs, id) => {
     let flattened = []
     cambridgePicked.forEach((item, i) => {
         const example_intermd = getIntermediateExample(item.meaning, lingueeDefs)
         // console.log(item.examples)
-        // NOTE: use cambridge second example if intermediate example does not exist
         const example_novoice_mono = item.examples[0].mono
         const example_novoice_tran = item.examples[0].tran
+        // NOTE: use cambridge second example if intermediate example does not exist
         const example_intermd_mono = example_intermd.mono ?
             example_intermd.mono :
             item.examples[1] ? item.examples[1].mono : ''
@@ -112,13 +112,13 @@ const flattenExamples = (cambridgePicked, lingueeDefs) => {
             meaning_mono: item.meaning_mono,
             gender: item.examples[0].gender,
             example_novoice_mono,
-            example_novoice_mono_fn: encodeFilename(example_novoice_mono),
+            example_novoice_mono_fn: encodeFilename(example_novoice_mono, id),
             example_novoice_tran,
-            example_novoice_tran_fn: encodeFilename(example_novoice_tran),
+            example_novoice_tran_fn: encodeFilename(example_novoice_tran, id),
             example_intermd_mono,
-            example_intermd_mono_fn: encodeFilename(example_intermd_mono),
+            example_intermd_mono_fn: encodeFilename(example_intermd_mono, id),
             example_intermd_tran,
-            example_intermd_tran_fn: encodeFilename(example_intermd_tran),
+            example_intermd_tran_fn: encodeFilename(example_intermd_tran, id),
         })
     })
     console.log('flattened', flattened)
@@ -153,7 +153,7 @@ Apify.main(async () => {
 
     // Pick Definition
     const picked = pickDefinition(input.cambridge.definitions)
-    const flattened = flattenExamples(picked, input.linguee.definitions)
+    const flattened = flattenExamples(picked, input.linguee.definitions, input.id)
 
     // Output a single word definition with simple examples: Basic::Vocab
 
