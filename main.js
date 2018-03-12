@@ -95,13 +95,13 @@ const getNounGender = noun => {
 
 }
 
-// NOTE: pick out definitions from cambridge dictionary.  First entry when grammar and form changed.
+// NOTE: pick out definitions from cambridge dictionary.  First two entries, assuming its importance, and first entry when grammar and form changed.
 const pickDefinition = (cambridgeDefs) => {
     let picked = []
     let grammar_tmp = ''
     let form_tmp = ''
     cambridgeDefs.forEach((item, i) => {
-        if (item.grammar !== grammar_tmp || item.form !== form_tmp) {
+        if (i < 2 || item.grammar !== grammar_tmp || item.form !== form_tmp) {
             picked.push(item)
             grammar_tmp = item.grammar
             form_tmp = item.form
