@@ -332,14 +332,24 @@ Apify.main(async () => {
             row09: gender,
             row10: form,
             row11: upperCaseFirstLetter(level),
-            row12: '',
-            row13: '',
+            row12: '', // NOTE: tenses
+            row13: translation,
             row14: '',
             row15: '',
             row16: getCambridgeDictLinkTag(source, translation, query),
             row17: getLingueeDictLinkTag(source, translation, query),
             row18: getConjugationLinkTag(source, translation, query),
             row19: getLanguageImageTag(source),
+            row20: '',
+            row21: '',
+            row22: '',
+            row23: '',
+            row24: '',
+            row25: '',
+            row26: '',
+            row27: '',
+            row28: '',
+            row29: '',
             // NOTE: calculate a filename.mp3
             audio00: `[sound:${encodeFilename(query, id, gender)}]`,
             audio01: `[sound:${encodeFilename(def_simple, id, gender)}]`,
@@ -361,11 +371,21 @@ Apify.main(async () => {
             audio17: '',
             audio18: '',
             audio19: '',
+            audio20: '',
+            audio21: '',
+            audio22: '',
+            audio23: '',
+            audio24: '',
+            audio25: '',
+            audio26: '',
+            audio27: '',
+            audio28: '',
+            audio29: '',
             flag_novoice: level === LEVEL_TYPE.NOVOICE ? 'y' : '',
             flag_intermd: level === LEVEL_TYPE.INTERMEDIATE ? 'y' : '',
             flag_expert: level === LEVEL_TYPE.EXPERT ? 'y' : '',
             lang: source,
-            tag: [
+            tags: [
                 '#sdy.phrase', `#lng.${source}`, `#lvl.${level.toLowerCase()}`
             ]
         })
@@ -375,6 +395,7 @@ Apify.main(async () => {
     const output = {
         createdAt: new Date(),
         name: 'apify/igsys/vocab-dict-aggregate',
+        input: input.linguee.input,
         data: {
             tts,
             phrases,
